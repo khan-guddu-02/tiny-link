@@ -11,10 +11,11 @@ export default function Home() {
     setShortUrl("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/url/shorten", {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/url/shorten`, {
         originalUrl: url,
       });
-      setShortUrl(`http://localhost:5000/${res.data.shortId}`);
+
+      setShortUrl(`${import.meta.env.VITE_API_URL}/${res.data.shortId}`);
     } catch (err) {
       console.error(err);
       alert("Error shortening URL");

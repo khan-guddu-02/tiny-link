@@ -7,11 +7,11 @@ export default function UrlCard({ url }) {
       <p>
         <strong>Short:</strong>{" "}
         <a
-          href={`http://localhost:5000/${url.short_id}`}
+          href={`${import.meta.env.VITE_API_URL}/${url.short_id}`}
           target="_blank"
           className="text-blue-500 underline"
         >
-          http://localhost:5000/{url.short_id}
+          {`${import.meta.env.VITE_API_URL}/${url.short_id}`}
         </a>
       </p>
       <p>🧮 Clicks: {url.clicks}</p>

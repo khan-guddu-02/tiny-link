@@ -8,7 +8,7 @@ export default function Dashboard() {
 
   const fetchUrls = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/url/list");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/url/list`);
       setUrls(res.data);
     } catch (err) {
       console.error(err);
@@ -41,4 +41,4 @@ export default function Dashboard() {
       </div>
     </div>
   );
-} 
+}
